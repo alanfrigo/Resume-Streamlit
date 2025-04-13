@@ -88,7 +88,7 @@ def sidebar():
     skills = [skill["skill"] for skill in top_skills.data]
     st.sidebar.markdown("\n".join(f"- {skill}" for skill in skills))
     st.sidebar.header("Languages")
-    st.sidebar.markdown("- English (Bilingual)\n\n- Portuguese (Native)\n- Spanish (Conversational)")
+    st.sidebar.markdown("- English (Bilingual)\n\n- Portuguese (Native)\n- Spanish (B1)")
     st.sidebar.header("Certifications")
     certifications_list = [cert["title"] for cert in certifications.data]
     certification_url = [cert["url"] for cert in certifications.data]
