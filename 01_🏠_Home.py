@@ -4,6 +4,7 @@ from st_supabase_connection import SupabaseConnection
 from supabase import create_client, Client
 import os
 
+
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
@@ -12,6 +13,9 @@ st.set_page_config(
     page_icon="./profile-pic.jpeg",
     layout="wide",
     initial_sidebar_state="expanded",
+    menu_items={
+        'About': "This is my personal resume page, built with Streamlit and Supabase. Feel free to reach out!"
+    }
 )
 
 @st.cache_resource
@@ -93,8 +97,11 @@ def sidebar():
     certifications_list = [cert["title"] for cert in certifications.data]
     certification_url = [cert["url"] for cert in certifications.data]
     st.sidebar.markdown("\n".join(f"- [{cert}]({url})" for cert, url in zip(certifications_list, certification_url)))
-    st.sidebar.markdown(f"""
-    """)
+
+    # Espaço reservado para o seletor de páginas no final
+    st.sidebar.markdown("---")  # Linha divisória
+    with st.sidebar.empty():
+        pass  # O seletor de páginas será automaticamente posicionado aqui
 
 def summary():
     st.header("Summary")
@@ -165,7 +172,6 @@ with tab1:
     summary()
 with tab2:
     experience()
-
 
 st.write(f"Developed with :heart: by Alan Frigo")
 st.write(f"Last updated: 2025, April 13th")
