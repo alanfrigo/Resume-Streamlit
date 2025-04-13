@@ -64,9 +64,9 @@ You can define these in your system environment or via a `.env` file using a pac
 
 Launch the interactive resume with Streamlit:
 
-       streamlit run app.py
+       streamlit run main.py
 
-> Replace `app.py` with the name of your main Python file if it is different.
+> Replace `main.py` with the name of your main Python file if it is different.
 
 ---
 
