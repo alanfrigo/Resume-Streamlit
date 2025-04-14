@@ -159,7 +159,7 @@ def experience():
             {date_start.strftime('%B %Y')} - {"Present" if not date_end else date_end.strftime('%B %Y')} ({calculate_months_difference(date_start)})
         """)
         if exp["acta"] is not None:
-            with st.container(border=True):
+            with st.expander("Activities and Achievements"):
                 st.markdown(exp["acta"])
             st.divider()
 
